@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Can_Store" Class="databaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Can_Store;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="enciclopedia_canina_store.Properties.Settings" SettingsPropertyName="Can_StoreConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.categoria" Member="categorias">
+    <Type Name="categoria">
+      <Column Name="cat_codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cat_nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="categoria_producto" Member="productos" ThisKey="cat_codigo" OtherKey="cat_codigo" Type="producto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ciudad" Member="ciudads">
+    <Type Name="ciudad">
+      <Column Name="ciu_codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ciu_nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ciudad_persona" Member="personas" ThisKey="ciu_codigo" OtherKey="ciu_codigo" Type="persona" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cliente" Member="clientes">
+    <Type Name="cliente">
+      <Column Name="cli_codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cli_tipo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cli_saldo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="cliente_factura_venta" Member="factura_ventas" ThisKey="cli_codigo" OtherKey="cli_codigo" Type="factura_venta" />
+      <Association Name="persona_cliente" Member="persona" ThisKey="cli_codigo" OtherKey="per_codigo" Type="persona" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Detalle_Factura" Member="Detalle_Facturas">
+    <Type Name="Detalle_Factura">
+      <Column Name="pro_codigo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pro_nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="precio_unidad" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="precio_total" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="fac_numero" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="cantidad" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="fac_ven_detalle" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Factura_Reporte_Detalle_Factura" Member="Factura_Reporte" ThisKey="fac_numero" OtherKey="fac_numero" Type="Factura_Reporte" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fabricante" Member="fabricantes">
+    <Type Name="fabricante">
+      <Column Name="fab_codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fab_nombre" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="fabricante_producto" Member="productos" ThisKey="fab_codigo" OtherKey="fab_codigo" Type="producto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fac_ven_detalle" Member="fac_ven_detalles">
+    <Type Name="fac_ven_detalle">
+      <Column Name="fac_ven_detalle" Member="fac_ven_detalle1" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fac_codigo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pro_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fv_cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fv_puv" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="fv_iva" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="fv_descuento" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="fv_estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="factura_venta_fac_ven_detalle" Member="factura_venta" ThisKey="fac_codigo" OtherKey="fac_codigo" Type="factura_venta" IsForeignKey="true" />
+      <Association Name="producto_fac_ven_detalle" Member="producto" ThisKey="pro_id" OtherKey="pro_id" Type="producto" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Factura_Reporte" Member="Factura_Reportes">
+    <Type Name="Factura_Reporte">
+      <Column Name="fac_numero" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="per_nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="per_apellido" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="per_direccion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="per_telefono" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="per_ruc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="total_pagar" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Factura_Reporte_Detalle_Factura" Member="Detalle_Facturas" ThisKey="fac_numero" OtherKey="fac_numero" Type="Detalle_Factura" />
+    </Type>
+  </Table>
+  <Table Name="dbo.factura_venta" Member="factura_ventas">
+    <Type Name="factura_venta">
+      <Column Name="fac_codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="fac_numero" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="fac_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="cli_codigo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ven_codigo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fac_subtotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="fac_subcero" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="fac_subiva" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="fac_total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="fac_descuento" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="fac_estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="factura_venta_fac_ven_detalle" Member="fac_ven_detalles" ThisKey="fac_codigo" OtherKey="fac_codigo" Type="fac_ven_detalle" />
+      <Association Name="cliente_factura_venta" Member="cliente" ThisKey="cli_codigo" OtherKey="cli_codigo" Type="cliente" IsForeignKey="true" />
+      <Association Name="vendedor_factura_venta" Member="vendedor" ThisKey="ven_codigo" OtherKey="ven_codigo" Type="vendedor" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.persona" Member="personas">
+    <Type Name="persona">
+      <Column Name="per_codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="per_nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="per_apellido" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="per_ruc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="per_direccion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="per_telefono" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ciu_codigo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="per_email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="persona_cliente" Member="cliente" ThisKey="per_codigo" OtherKey="cli_codigo" Type="cliente" Cardinality="One" />
+      <Association Name="persona_vendedor" Member="vendedor" ThisKey="per_codigo" OtherKey="ven_codigo" Type="vendedor" Cardinality="One" />
+      <Association Name="ciudad_persona" Member="ciudad" ThisKey="ciu_codigo" OtherKey="ciu_codigo" Type="ciudad" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.persona_vendedor" Member="persona_vendedors">
+    <Type Name="persona_vendedor">
+      <Column Name="per_nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="per_ruc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="per_direccion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="per_telefono" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="per_email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ven_sueldo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ven_user" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.producto" Member="productos">
+    <Type Name="producto">
+      <Column Name="pro_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pro_nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pro_descripcion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pro_cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pro_precio_compra" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="pro_precio_venta" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cat_codigo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fab_codigo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pro_codigo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pro_iva" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pro_estado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="pro_desc_porcen" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="producto_fac_ven_detalle" Member="fac_ven_detalles" ThisKey="pro_id" OtherKey="pro_id" Type="fac_ven_detalle" />
+      <Association Name="categoria_producto" Member="categoria" ThisKey="cat_codigo" OtherKey="cat_codigo" Type="categoria" IsForeignKey="true" />
+      <Association Name="fabricante_producto" Member="fabricante" ThisKey="fab_codigo" OtherKey="fab_codigo" Type="fabricante" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vendedor" Member="vendedors">
+    <Type Name="vendedor">
+      <Column Name="ven_codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ven_sueldo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ven_fecha_ingreso" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ven_estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ven_user" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ven_password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="vendedor_factura_venta" Member="factura_ventas" ThisKey="ven_codigo" OtherKey="ven_codigo" Type="factura_venta" />
+      <Association Name="persona_vendedor" Member="persona" ThisKey="ven_codigo" OtherKey="per_codigo" Type="persona" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+</Database>

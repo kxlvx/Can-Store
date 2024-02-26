@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B0EEEAA5-7179-48F8-9231-363435190008}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>enciclopedia_canina_store</RootNamespace>
+    <AssemblyName>enciclopedia_canina_store</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\kalva\Desktop\Ejecutable forma 2\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3641350F5541B3F8C479742F97988885C505136D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>enciclopedia_canina_store_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icono.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Sistema_Can_Store|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Sistema_Can_Store\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="database.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>database.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\frm_buscar_persona.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\frm_buscar_persona.Designer.cs">
+      <DependentUpon>frm_buscar_persona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\frm_buscar_producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\frm_buscar_producto.Designer.cs">
+      <DependentUpon>frm_buscar_producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\frm_categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\frm_categoria.Designer.cs">
+      <DependentUpon>frm_categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\frm_ciudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\frm_ciudad.Designer.cs">
+      <DependentUpon>frm_ciudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\frm_clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\frm_clientes.Designer.cs">
+      <DependentUpon>frm_clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\frm_compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\frm_compras.Designer.cs">
+      <DependentUpon>frm_compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\frm_fabricante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\frm_fabricante.Designer.cs">
+      <DependentUpon>frm_fabricante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\frm_facturacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\frm_facturacion.Designer.cs">
+      <DependentUpon>frm_facturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\frm_inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\frm_inicio.Designer.cs">
+      <DependentUpon>frm_inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\frm_producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\frm_producto.Designer.cs">
+      <DependentUpon>frm_producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\frm_reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\frm_reportes.Designer.cs">
+      <DependentUpon>frm_reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\frm_vendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\frm_vendedor.Designer.cs">
+      <DependentUpon>frm_vendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\reportes\frm_rpt_categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\reportes\frm_rpt_categoria.Designer.cs">
+      <DependentUpon>frm_rpt_categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\reportes\frm_rpt_ciudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\reportes\frm_rpt_ciudad.Designer.cs">
+      <DependentUpon>frm_rpt_ciudad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\reportes\frm_rpt_clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\reportes\frm_rpt_clientes.Designer.cs">
+      <DependentUpon>frm_rpt_clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\reportes\frm_rpt_fabricantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\reportes\frm_rpt_fabricantes.Designer.cs">
+      <DependentUpon>frm_rpt_fabricantes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\reportes\frm_rpt_factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\reportes\frm_rpt_factura.Designer.cs">
+      <DependentUpon>frm_rpt_factura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\reportes\frm_rpt_productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\reportes\frm_rpt_productos.Designer.cs">
+      <DependentUpon>frm_rpt_productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\reportes\frm_rpt_vendedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaces\reportes\frm_rpt_vendedores.Designer.cs">
+      <DependentUpon>frm_rpt_vendedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaces\reportes\rpt_Categorias1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Categorias.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="interfaces\reportes\rpt_Ciudades.cs">
+      <DependentUpon>rpt_Ciudades.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="interfaces\reportes\rpt_FacturaVenta.cs">
+      <DependentUpon>rpt_FacturaVenta.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="interfaces\reportes\rpt_Vendedores.cs">
+      <DependentUpon>rpt_Vendedores.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="interfaces\reportes\rpt_Clientes1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Clientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="interfaces\reportes\rpt_Fabricante1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Fabricante.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="interfaces\reportes\rpt_Productos1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Productos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="logica negocio\cCategoria.cs" />
+    <Compile Include="logica negocio\cCiudad.cs" />
+    <Compile Include="logica negocio\cCliente.cs" />
+    <Compile Include="logica negocio\cFabricante.cs" />
+    <Compile Include="logica negocio\cFactura.cs" />
+    <Compile Include="logica negocio\cProducto.cs" />
+    <Compile Include="logica negocio\cVendedor.cs" />
+    <Compile Include="logica negocio\cVentaDetalle.cs" />
+    <Compile Include="logica negocio\Expresiones_Regulares.cs" />
+    <Compile Include="logica negocio\Validaciones_Codigo_Ancii.cs" />
+    <Compile Include="logica negocio\Validaciones_Entrada_De_Texto.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="database.dbml.layout">
+      <DependentUpon>database.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="interfaces\frm_buscar_persona.resx">
+      <DependentUpon>frm_buscar_persona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\frm_buscar_producto.resx">
+      <DependentUpon>frm_buscar_producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\frm_categoria.resx">
+      <DependentUpon>frm_categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\frm_ciudad.resx">
+      <DependentUpon>frm_ciudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\frm_clientes.resx">
+      <DependentUpon>frm_clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\frm_compras.resx">
+      <DependentUpon>frm_compras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\frm_fabricante.resx">
+      <DependentUpon>frm_fabricante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\frm_facturacion.resx">
+      <DependentUpon>frm_facturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\frm_inicio.resx">
+      <DependentUpon>frm_inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\frm_producto.resx">
+      <DependentUpon>frm_producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\frm_reportes.resx">
+      <DependentUpon>frm_reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\frm_vendedor.resx">
+      <DependentUpon>frm_vendedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\reportes\frm_rpt_categoria.resx">
+      <DependentUpon>frm_rpt_categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\reportes\frm_rpt_ciudad.resx">
+      <DependentUpon>frm_rpt_ciudad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\reportes\frm_rpt_clientes.resx">
+      <DependentUpon>frm_rpt_clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\reportes\frm_rpt_fabricantes.resx">
+      <DependentUpon>frm_rpt_fabricantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\reportes\frm_rpt_factura.resx">
+      <DependentUpon>frm_rpt_factura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\reportes\frm_rpt_productos.resx">
+      <DependentUpon>frm_rpt_productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\reportes\frm_rpt_vendedores.resx">
+      <DependentUpon>frm_rpt_vendedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\reportes\rpt_Categorias.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Categorias1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\reportes\rpt_Ciudades.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Ciudades.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\reportes\rpt_FacturaVenta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_FacturaVenta.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\reportes\rpt_Vendedores.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Vendedores.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\reportes\rpt_Clientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Clientes1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\reportes\rpt_Fabricante.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Fabricante1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaces\reportes\rpt_Productos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Productos1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="database.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>database.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="enciclopedia_canina_store_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\fondoVentana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="SAP.CrystalReports14.NET.2.0">
+      <Visible>False</Visible>
+      <ProductName>SAP Crystal Reports Runtime Engine for .NET Framework</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Imagenes\serrar_sesion.png" />
+    <Content Include="icono.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="log4net">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
