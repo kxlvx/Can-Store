@@ -1,7 +1,8 @@
 Sistema de inventario para llevar el control de productos, comida y accesorios para perros
 
-Formulario Categorías de Producto
+Ingreso al Sistema
 <img width="1440" alt="Inicio" src="https://github.com/kxlvx/Can-Store/assets/31738624/f322fe8c-b932-400c-889c-9aa84598aac8">
+Página principal del Sistema
 <img width="1440" alt="Captura de pantalla 2024-02-26 a la(s) 10 21 38" src="https://github.com/kxlvx/Can-Store/assets/31738624/b280ed86-d249-44bc-a5d3-869637e96e38">
 Lista de catorías
 <img width="1440" alt="Captura de pantalla 2024-02-26 a la(s) 10 24 09" src="https://github.com/kxlvx/Can-Store/assets/31738624/5d46da63-19be-4445-8d92-6dd14d49b4e3">
