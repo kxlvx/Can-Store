@@ -14,7 +14,7 @@ Crear un nuevo producto
 
 Reporte de productos
 <img width="1440" alt="Captura de pantalla 2024-02-26 a la(s) 10 25 38" src="https://github.com/kxlvx/Can-Store/assets/31738624/a9c427b6-bdca-4c9e-9889-21511cf427ad">
-Repotes de Fabricantes de producto
+Reporte de Fabricantes de producto
 <img width="1440" alt="Captura de pantalla 2024-02-26 a la(s) 10 30 50" src="https://github.com/kxlvx/Can-Store/assets/31738624/522ea2a4-6aa6-4e85-9cd6-ba00247c2a4d">
 
 Facturación
